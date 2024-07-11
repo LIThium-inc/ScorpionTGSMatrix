@@ -70,4 +70,3 @@ def create_events_count_matrix(matrix, array, pixels_per_event=1, min_filter=0.0
             x = array_x.index(zeroless_x[0])
             y = array_y.index(zeroless_y[0])
             matrix[x, y] = matrix[x, y] + 1
-
