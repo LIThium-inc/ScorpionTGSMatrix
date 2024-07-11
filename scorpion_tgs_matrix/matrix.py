@@ -33,7 +33,6 @@ def create_energy_matrix(matrix, array, pixels_per_event=1, min_filter=0.0):
                     matrix[x, y] = matrix[x, y] + zeroless_y[j]
     elif pixels_per_event == 1:
         if len(zeroless_x) == len(zeroless_y) == 1 and zeroless_x[0] >= min_filter and zeroless_y[0] >= min_filter:
-            print(zeroless_x[0], zeroless_y[0])
             x = array_x.index(zeroless_x[0])
             y = array_y.index(zeroless_y[0])
             matrix[x, y] = matrix[x, y] + zeroless_x[0]
@@ -41,7 +40,7 @@ def create_energy_matrix(matrix, array, pixels_per_event=1, min_filter=0.0):
 
 # noinspection t
 def create_events_count_matrix(matrix, array, pixels_per_event=1, min_filter=0.0):
-    """Create a matrix of energy distribution.
+    """Create a matrix of count distribution.
 
         @param: matrix A matrix to save parameters
         @param: array A string with energy data
@@ -68,7 +67,6 @@ def create_events_count_matrix(matrix, array, pixels_per_event=1, min_filter=0.0
                     matrix[x, y] = matrix[x, y] + 1
     elif pixels_per_event == 1:
         if len(zeroless_x) == len(zeroless_y) == 1 and zeroless_x[0] >= min_filter and zeroless_y[0] >= min_filter:
-            print(zeroless_x[0], zeroless_y[0])
             x = array_x.index(zeroless_x[0])
             y = array_y.index(zeroless_y[0])
             matrix[x, y] = matrix[x, y] + 1
