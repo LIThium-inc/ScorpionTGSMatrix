@@ -1,6 +1,3 @@
-data = open('test.txt', 'r')
-
-
 def remove_zero(array):
     while 0.0 in array:
         array.remove(0.0)
@@ -33,14 +30,12 @@ def create_energy_matrix(matrix, array, pixels_per_event=1, min_filter=0.0):
                 for j in range(len(zeroless_y)):
                     x = array_x.index(zeroless_x[0])
                     y = array_y.index(zeroless_y[j])
-                    print(f"X: {x}, Y: {y}")
                     matrix[x, y] = matrix[x, y] + zeroless_y[j]
     elif pixels_per_event == 1:
         if len(zeroless_x) == len(zeroless_y) == 1 and zeroless_x[0] >= min_filter and zeroless_y[0] >= min_filter:
             print(zeroless_x[0], zeroless_y[0])
             x = array_x.index(zeroless_x[0])
             y = array_y.index(zeroless_y[0])
-            print(f"X: {x}, Y: {y}")
             matrix[x, y] = matrix[x, y] + zeroless_x[0]
 
 
