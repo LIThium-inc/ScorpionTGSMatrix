@@ -21,9 +21,9 @@ print(count_matrix)
 
 fig, ax = plt.subplots()
 
-cax = ax.imshow(energy_matrix, cmap='YlOrBr', interpolation='none')
+cax = ax.imshow(count_matrix, cmap='YlOrBr', interpolation='none')
 
 fig.colorbar(cax)
 
-plt.title("Распределение энергии на матрице GAGG:Cr +Pol 1МэВ 0deg:")
+# plt.title("Распределение количества регистрации на матрице GAGG:Cr +Pol 1МэВ 0deg:")
 plt.show()

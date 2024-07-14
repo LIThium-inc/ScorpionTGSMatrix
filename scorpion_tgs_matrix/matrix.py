@@ -14,8 +14,8 @@ def create_energy_matrix(matrix, array, pixels_per_event=1, min_filter=0.0):
 
         """
 
-    zeroless_x, array_x = array[:8], array[:8]
-    zeroless_y, array_y = array[8:], array[8:]
+    zeroless_x, array_x = array[:int((len(array)/2))], array[:int((len(array)/2))]
+    zeroless_y, array_y = array[int((len(array)/2)):], array[int((len(array)/2)):]
     remove_zero(zeroless_x)
     remove_zero(zeroless_y)
     if pixels_per_event > 1:
